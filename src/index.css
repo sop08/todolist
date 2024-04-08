@@ -1,13 +1,69 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Item.css */
+.bucket-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.bucket-item.completed {
+  text-decoration: line-through;
+}
+
+.bucket-item span {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.bucket-item button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.bucket-item button:hover {
+  color: #007bff;
+}
+
+/* BucketList.css */
+.bucket-list-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+}
+
+.add-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.add-item input {
+  flex-grow: 1;
+  padding: 8px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+}
+
+.add-item button {
+  padding: 8px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.add-item button:hover {
+  background-color: #0056b3;
+}
+
+.bucket-items {
+  margin-top: 20px;
+}
+
+.bucket-items h1 {
+  text-align: center;
 }

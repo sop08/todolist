@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import BucketList from "./BucketList";
+import "./styles.css";
+import { useState } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const item = [
+    { id: 1, quantity: "1", name: "Wash dish", onToggle: false },
+    { id: 2, quantity: "2", name: "Do homework", onToggle: false },
+    { id: 3, quantity: "3", name: "Make dinner", onToggle: false },
+  ];
+
+  const [items, setItems] = useState(item);
+
+  function handleAddItem(item) {
+    setItems((items) => [...items, item]);
+    console.log(items);
+  }
+  function handleDeleteItem(id) {
+    setItems((items) => items.filter((item) => item.id !== id));
+  }
+
+  return <BucketList />;
 }
 
 export default App;
